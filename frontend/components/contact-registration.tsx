@@ -271,7 +271,7 @@ export function ContactRegistration() {
             </div>
           )}
           <form className="space-y-6" onSubmit={handleSubmit}>
-            {/* Type and Existing Contacts */}
+            {/*---------     Type and Existing Contacts     ------------------------*/}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="space-y-1">
                 <Label htmlFor="type" className="text-sm font-medium text-gray-700">
@@ -304,7 +304,7 @@ export function ContactRegistration() {
               </div>
             </div>
 
-            {/* Personal Information Row */}
+            {/*-------- Personal Information Row -------------------*/}
             <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
               <div className="space-y-2">
                 <Label htmlFor="pronouns" className="text-sm font-medium text-gray-700">
@@ -321,6 +321,8 @@ export function ContactRegistration() {
                   </SelectContent>
                 </Select>
               </div>
+
+              {/* --------------------    First Name -------------------------------------- */}
               <div className="space-y-2">
                 <Label htmlFor="firstName" className="text-sm font-medium text-gray-700">
                   First Name: <span className="text-red-500">*</span>
@@ -351,6 +353,8 @@ export function ContactRegistration() {
                 />
                 {errors.firstName && <p className="text-sm text-red-600">{errors.firstName}</p>}
               </div>
+
+              {/* ------------------      Last Name     ------------------------------------------------- */}
               <div className="space-y-2">
                 <Label htmlFor="lastName" className="text-sm font-medium text-gray-700">
                   Last Name: <span className="text-red-500">*</span>
@@ -381,6 +385,8 @@ export function ContactRegistration() {
                 />
                 {errors.lastName && <p className="text-sm text-red-600">{errors.lastName}</p>}
               </div>
+
+              {/* ------------------        Suffix      ------------------------------------ */}
               <div className="space-y-2">
                 <Label htmlFor="suffix" className="text-sm font-medium text-gray-700">
                   Suffix:
@@ -394,6 +400,8 @@ export function ContactRegistration() {
                   onChange={(e) => setFormData({ ...formData, suffix: e.target.value })}
                 />
               </div>
+
+              {/* -------------------       Title       ----------------------------------------------- */}
               <div className="space-y-2">
                 <Label htmlFor="title" className="text-sm font-medium text-gray-700">
                   Title:
@@ -407,6 +415,8 @@ export function ContactRegistration() {
                   onChange={(e) => setFormData({ ...formData, title: e.target.value })}
                 />
               </div>
+
+              {/* -------------------------     Status      ------------------------------------------ */}
               <div className="space-y-2">
                 <Label htmlFor="status" className="text-sm font-medium text-gray-700">
                   Status: <span className="text-red-500">*</span>
@@ -422,6 +432,8 @@ export function ContactRegistration() {
                 </Select>
                 {errors.status && <p className="text-sm text-red-600">{errors.status}</p>}
               </div>
+
+              {/* ------------------------    Goes By     ------------------------------------------------- */}
               <div className="space-y-2">
                 <Label htmlFor="goesBy" className="text-sm font-medium text-gray-700">
                   Goes By:
@@ -443,7 +455,7 @@ export function ContactRegistration() {
               <div className="md:col-span-5"></div>
             </div> */}
 
-            {/* Contact Information */}
+            {/*---------       Contact Information        ---------------------*/}
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
               <div className="space-y-2">
                 <Label htmlFor="email" className="text-sm font-medium text-gray-700 flex items-center gap-1">
@@ -492,7 +504,7 @@ export function ContactRegistration() {
 
               </div>
 
-
+              {/* --------      Office    -------------------------- */}
               <div className="space-y-2">
                 <Label htmlFor="office" className="text-sm font-medium text-gray-700">
                   Office Number: <span className="text-red-500">*</span>
@@ -519,7 +531,8 @@ export function ContactRegistration() {
                 {errors.officeNumber && <p className="text-sm text-red-600">{errors.officeNumber}</p>}
               </div>
 
-              {/* Cell Number */}
+              {/*---------------------   Cell Number  --------------------------------------- */}
+
               {/* <div className="space-y-2">
                 <Label htmlFor="cell" className="text-sm font-medium text-gray-700">
                   Cell Number: <span className="text-red-500">*</span>
@@ -605,7 +618,7 @@ export function ContactRegistration() {
                       <Input
                         id="cellNumber"
                         placeholder="Enter 10 digit number"
-                        className={`h-9 md:h-10 w-full border border-gray-200 rounded-md px-3 ${errors.cellNumber ? "border-red-500" : ""
+                        className={`h-9 md:h-10 w-full border border-gray-200 rounded-md px-3 ${errors.cellNumber ? "border-red-600" : ""
                           }`}
                         value={formData.cellNumber}
                         inputMode="numeric"
@@ -658,7 +671,7 @@ export function ContactRegistration() {
                         aria-describedby={errors.cellNumber ? "cell-error" : undefined}
                       />
                       {errors.cellNumber ? (
-                        <p id="cell-error" role="alert" className="text-red-500 text-xs mt-1">
+                        <p id="cell-error" role="alert" className="text-red-600 text-xs mt-1">
                           {errors.cellNumber}
                         </p>
                       ) : null}
@@ -668,7 +681,7 @@ export function ContactRegistration() {
               </div>
 
 
-
+              {/* --------  GROUP       ------------------------ */}
 
               <div className="space-y-2">
                 <Label htmlFor="group" className="text-sm font-medium text-gray-700">
@@ -687,7 +700,7 @@ export function ContactRegistration() {
               </div>
             </div>
 
-            {/* Address Information */}
+            {/*-----    Address Information       ---------------------------------*/}
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
               <div className="space-y-2">
                 <Label htmlFor="address1" className="text-sm font-medium text-gray-700 flex items-center gap-1">
@@ -780,7 +793,7 @@ export function ContactRegistration() {
               </div>
             </div>
 
-            {/* Zip Code Row */}
+            {/*-----------    Zip Code Row    ------------------------------------ */}
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
               <div className="space-y-2">
                 <Label htmlFor="zip" className="text-sm font-medium text-gray-700">
@@ -822,7 +835,7 @@ export function ContactRegistration() {
               <div className="md:col-span-2"></div>
             </div>
 
-            {/* Personal Details */}
+            {/*------        Personal Details     ---------------------------------*/}
             <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
               <div className="space-y-2">
                 <Label htmlFor="dob" className="text-sm font-medium text-gray-700">
@@ -964,7 +977,7 @@ export function ContactRegistration() {
               </div>
             </div>
 
-            {/* Education and Employment */}
+            {/*----------    Education and Employment       -----------------------*/}
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
               <div className="space-y-2">
                 <Label htmlFor="college" className="text-sm font-medium text-gray-700">
@@ -1041,7 +1054,7 @@ export function ContactRegistration() {
               </div>
             </div>
 
-            {/* Notes and Additional Info */}
+            {/*------------    Notes and Additional Info          -----------------*/}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="space-y-2">
                 <Label htmlFor="notes" className="text-sm font-medium text-gray-700">
@@ -1085,7 +1098,7 @@ export function ContactRegistration() {
               </div>
 
             </div>
-            {/* Submit Button */}
+            {/*-------       Submit Button      ---------------------------------- */}
             <div className="flex justify-center pt-6">
               <Button
                 type="submit"

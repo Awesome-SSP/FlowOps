@@ -1,10 +1,20 @@
-"use client"
+
 
 import { ConvergenceLayout } from "@/components/convergence-layout"
 import chartRegistry from "@/components/charts"
 import React from "react"
+import { cookies } from "next/headers"
+import { redirect } from "next/navigation"
 
-export default function DashboardPage() {
+export default async function DashboardPage() {
+
+  const cookieStore = await cookies() // await the Promise
+  const token = cookieStore.get("token")?.value // now get() works
+
+  if (!token) {
+    redirect("/login") // server-side redirect
+  }
+
   return (
     <ConvergenceLayout>
       <div className="p-6">

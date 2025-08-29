@@ -10,19 +10,32 @@ export default function AuthSelectionPage() {
   const [role, setRole] = useState<string>("")
   const [remember, setRemember] = useState(true)
 
+  // const handleSubmit = (e: React.FormEvent) => {
+  //   e.preventDefault()
+
+  //   const payload = { orgCode, role }
+  //   try {
+  //     if (remember) localStorage.setItem("authSelection", JSON.stringify(payload))
+  //     // navigate to dashboard after selection
+  //     window.location.href = "/dashboard"
+  //   } catch (err) {
+  //     console.error("Failed to store auth selection", err)
+  //     window.location.href = "/dashboard"
+  //   }
+  // }
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
+    if (!orgCode || !role) {
+      alert("Please select both organization and role")
+      return
+    }
 
     const payload = { orgCode, role }
-    try {
-      if (remember) localStorage.setItem("authSelection", JSON.stringify(payload))
-      // navigate to dashboard after selection
-      window.location.href = "/dashboard"
-    } catch (err) {
-      console.error("Failed to store auth selection", err)
-      window.location.href = "/dashboard"
-    }
+    if (remember) localStorage.setItem("authSelection", JSON.stringify(payload))
+    window.location.href = "/dashboard"
   }
+
 
   // prefill if saved
   useEffect(() => {
