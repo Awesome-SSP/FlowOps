@@ -1051,6 +1051,7 @@ export function ContactRegistration() {
                   id="notes"
                   placeholder="Notes"
                   rows={5}
+                  maxLength={500}
                   className="resize-none h-30"
                   value={formData.notes}
                   onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
